@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 ![Challenge](https://img.shields.io/badge/Challenge-Robotics%20Dream%20Keeper-blue)
-![Stage](https://img.shields.io/badge/Stage-1%20Ignite-green)
+![Stage](https://img.shields.io/badge/Stage--1-%20Ignite-green)
 
 An AI-powered autonomous vehicle platform built using the D-Robotics RDK X5.
 
