@@ -245,6 +245,7 @@ Stereo Vision MIPI Camera operational.
 
 YOLO object detection running on the RDK X5.
 ![YOLOv5_Over_MIPI_Camera Screenshot](images/YOLOv5_MIPI_Camera.png) 
+
 ---
 
 # Previous RDK X5 Projects
