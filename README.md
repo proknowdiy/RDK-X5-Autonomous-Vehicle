@@ -1,5 +1,7 @@
 # RDK X5 Autonomous Vehicle
 
+https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge
+
 An AI-powered autonomous vehicle platform built using the D-Robotics RDK X5.
 
 This project is being developed as part of the **Robotics Dream Keeper Challenge 2026** and aims to combine computer vision, robotics, and intelligent navigation into a miniature autonomous vehicle platform.
