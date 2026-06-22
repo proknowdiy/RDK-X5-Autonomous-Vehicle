@@ -1,6 +1,8 @@
 # RDK X5 Autonomous Vehicle
 
-https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge
+![Status](https://shields.io)
+![Challenge](https://shields.io)
+![Stage](https://shields.io)
 
 An AI-powered autonomous vehicle platform built using the D-Robotics RDK X5.
 
