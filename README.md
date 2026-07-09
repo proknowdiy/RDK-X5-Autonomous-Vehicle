@@ -4,11 +4,32 @@
 ![Challenge](https://img.shields.io/badge/Challenge-Robotics%20Dream%20Keeper-blue)
 ![Stage](https://img.shields.io/badge/Stage--1-%20Ignite-green)
 
-An AI-powered autonomous vehicle platform built using the D-Robotics RDK X5.
+# RDK X5 Autonomous Vehicle
 
-This project is being developed as part of the **Robotics Dream Keeper Challenge 2026** and aims to combine computer vision, robotics, and intelligent navigation into a miniature autonomous vehicle platform.
+An AI-powered 1/10 scale autonomous vehicle built using the **D-Robotics RDK X5**, demonstrating real-time road tracking, object detection, behavior planning, and autonomous driving using ROS 2.
+
+This project is being developed as part of the **D-Robotics Robotics Dream Keeper Challenge 2026**.
 
 ---
+
+## Features
+
+- AI-powered autonomous driving
+- D-Robotics Racing Track Detection (ResNet18)
+- YOLOv11 object detection
+- ROS 2 modular architecture
+- UART communication with ESP32-C3
+- Manual / Autonomous driving modes
+- Autonomous lane following
+- Obstacle avoidance
+- Autonomous lane changing
+
+## AI Models
+
+| Model | Purpose |
+|---------|----------|
+| D-Robotics Racing Track Detection (ResNet18) | Road Tracking |
+| YOLOv11 | Vehicle & Obstacle Detection |
 
 ## Project Status
 
@@ -263,6 +284,16 @@ https://youtu.be/8uTyAJ5kaSc
 https://youtu.be/LycdAzMbdvA
 
 ---
+
+## Project Documentation
+
+- 📄 [Stage 2 Proposal](PROPOSAL.md)
+
+- 🗺️ [Development Roadmap](ROADMAP.md)
+
+RDK X5 Autonomous Vehicle
+
+Robotics Dream Keeper Challenge 2026
 
 # Author
 
