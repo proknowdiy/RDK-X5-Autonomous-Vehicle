@@ -114,17 +114,69 @@ ESP32 --> ESC["90A Brushed ESC"]
 ESC --> Motor["RS540 Motor"]
 ```
 
+## Hardware Architecture
+
+```mermaid
+flowchart LR
+
+Battery["3S LiPo Battery"]
+
+Battery --> ESC["90A Brushed ESC"]
+Battery --> RDK["D-Robotics RDK X5"]
+Battery --> ESP32["DFRobot Beetle ESP32-C3"]
+
+Camera["Stereo Vision MIPI Camera"]
+Camera --> RDK
+
+RDK --> UART["UART"]
+
+UART --> ESP32
+
+ESP32 --> Servo["MG996R Steering Servo"]
+
+ESC --> Motor["RS540 Brushed Motor"]
+
+Receiver["RadioLink Receiver"]
+
+Receiver --> ESP32
+
+Transmitter["RC6GS Transmitter"]
+
+Transmitter -. Wireless .-> Receiver
+```
+
 ## ROS2 Node Graph
 
 ```mermaid
 flowchart LR
-camera_node --> road_tracking_node
-camera_node --> object_detection_node
-road_tracking_node --> behavior_planner_node
-object_detection_node --> behavior_planner_node
-behavior_planner_node --> vehicle_controller_node
-vehicle_controller_node --> uart_bridge_node
-uart_bridge_node --> esp32_controller
+
+Camera["camera_node"]
+
+Road["road_tracking_node"]
+
+Object["object_detection_node"]
+
+Planner["behavior_planner_node"]
+
+Controller["vehicle_controller_node"]
+
+UART["uart_bridge_node"]
+
+ESP32["esp32_controller"]
+
+Camera -->|/camera/image_raw| Road
+
+Camera -->|/camera/image_raw| Object
+
+Road -->|/road_state| Planner
+
+Object -->|/detections| Planner
+
+Planner -->|/vehicle_cmd| Controller
+
+Controller -->|/uart_tx| UART
+
+UART --> ESP32
 ```
 
 ## Compute Allocation
@@ -156,6 +208,52 @@ uart_bridge_node --> esp32_controller
 | Road Lost | Slow and Stop |
 | UART Timeout | ESP32 Failsafe |
 | Invalid Planner Output | Emergency Stop |
+
+## Behavior Planner State Machine
+
+```mermaid
+stateDiagram-v2
+
+[*] --> Manual
+
+Manual --> Autonomous : Enable Auto Mode
+
+Autonomous --> LaneFollowing
+
+LaneFollowing --> ObstacleDetected : Object Detected
+
+ObstacleDetected --> LaneChange : Adjacent Lane Free
+
+ObstacleDetected --> StopVehicle : Lane Blocked
+
+LaneChange --> LaneFollowing
+
+StopVehicle --> LaneFollowing : Road Clear
+
+Autonomous --> Manual : RC Override
+
+Manual --> [*]
+```
+
+## AI Capability
+
+```mermaid
+flowchart LR
+
+Camera["Stereo Vision MIPI Camera"]
+
+Camera --> ResNet["D-Robotics Racing Track Detection\n(ResNet18)"]
+
+Camera --> YOLO["YOLOv11"]
+
+ResNet --> Road["Road Center"]
+
+YOLO --> Objects["Detected Objects"]
+
+Road --> Planner["Behavior Planner"]
+
+Objects --> Planner
+```
 
 ---
 
