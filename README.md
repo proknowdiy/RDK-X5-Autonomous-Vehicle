@@ -10,8 +10,6 @@ An AI-powered 1/10 scale autonomous vehicle built using the **D-Robotics RDK X5*
 
 This project is being developed as part of the **D-Robotics Robotics Dream Keeper Challenge 2026**.
 
----
-
 ## Features
 
 - AI-powered autonomous driving
