@@ -19,6 +19,28 @@ Develop a 1/10 scale autonomous vehicle using the D-Robotics RDK X5 capable of:
 
 ---
 
+```mermaid
+flowchart LR
+
+A["Vehicle Assembly"]
+
+-->B["Electronics Integration"]
+
+-->C["ROS2 Bring-up"]
+
+-->D["ResNet18 Road Tracking"]
+
+-->E["YOLO Object Detection"]
+
+-->F["Behavior Planner"]
+
+-->G["Vehicle Controller"]
+
+-->H["Testing"]
+
+-->I["Final Demonstration"]
+```
+
 # Milestones
 
 | ID | Milestone | Exit Criteria |
