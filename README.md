@@ -1,8 +1,11 @@
 # RDK X5 Autonomous Vehicle
 
-![Status](https://img.shields.io/badge/Status-In%20Development-orange)
+![Status](https://img.shields.io/badge/Status-Stage%202%20Completed-success)
 ![Challenge](https://img.shields.io/badge/Challenge-Robotics%20Dream%20Keeper-blue)
-![Stage](https://img.shields.io/badge/Stage--1-%20Ignite-green)
+![Stage](https://img.shields.io/badge/Stage-2%20Build-success)
+![Platform](https://img.shields.io/badge/Platform-RDK%20X5-orange)
+![ROS2](https://img.shields.io/badge/ROS2-Planned-22314E?logo=ros)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 # RDK X5 Autonomous Vehicle
 
@@ -31,11 +34,11 @@ This project is being developed as part of the **D-Robotics Robotics Dream Keepe
 
 ## Project Status
 
-| Stage                      | Status         |
-| -------------------------- | -------------- |
-| Stage 1 - Ignite Challenge | ✅ Completed    |
-| Stage 2 - Build Challenge  | 🚧 In Progress |
-| Stage 3 - Launch Challenge | ⏳ Planned      |
+| Stage | Status |
+|-------|--------|
+| Stage 1 – Ignite Challenge | ✅ Completed |
+| Stage 2 – Build Challenge | ✅ Completed |
+| Stage 3 – Launch Challenge | 🚧 In Progress |
 
 ---
 
