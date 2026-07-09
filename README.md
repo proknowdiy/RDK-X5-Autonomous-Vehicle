@@ -3,7 +3,7 @@
 ![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 ![Challenge](https://img.shields.io/badge/Challenge-Robotics%20Dream%20Keeper-blue)
 ![Stage](https://img.shields.io/badge/Stage--2-%20Build-success)
-![Platform]([https://img.shields.io/badge/Platform-RDK%20X5-orange](https://img.shields.io/badge/Brain-RDK%20X5%20·%2010%20TOPS%20BPU-e8491d.svg)](https://developer.d-robotics.cc/))
+[![Platfrom: RDK X5](https://img.shields.io/badge/Brain-RDK%20X5%20·%2010%20TOPS%20BPU-e8491d.svg)](https://developer.d-robotics.cc/)
 [![Sub-MCU: ESP32](https://img.shields.io/badge/Sub--MCU-ESP32-blue.svg)](https://www.espressif.com/)
 ![ROS2](https://img.shields.io/badge/ROS2-Planned-22314E?logo=ros)
 ![License](https://img.shields.io/badge/License-MIT-green)
