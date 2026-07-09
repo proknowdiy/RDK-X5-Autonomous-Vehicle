@@ -1,8 +1,8 @@
 # RDK X5 Autonomous Vehicle
 
-![Status](https://img.shields.io/badge/Status-Stage%202%20Completed-success)
+![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 ![Challenge](https://img.shields.io/badge/Challenge-Robotics%20Dream%20Keeper-blue)
-![Stage](https://img.shields.io/badge/Stage-2%20Build-success)
+![Stage](https://img.shields.io/badge/Stage--2-%20Build-success)
 ![Platform](https://img.shields.io/badge/Platform-RDK%20X5-orange)
 ![ROS2](https://img.shields.io/badge/ROS2-Planned-22314E?logo=ros)
 ![License](https://img.shields.io/badge/License-MIT-green)
