@@ -239,9 +239,9 @@ OpenCV --> Road["Road Center"]
 
 YOLO --> Objects["Detected Objects"]
 
-Road --> Vehicle_Control["Behavior Planner"]
+Road --> Planner["Vehicle Control"]
 
-Objects --> Vehicle_Control
+Objects --> Planner
 ```
 
 ---
