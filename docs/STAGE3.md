@@ -4,7 +4,11 @@
 
 **Author:** Vishal Sharma (Pro Know)  
 **Repository:** https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle
+
+**Project Showcase PR:** https://github.com/D-Robotics/Robotics-Dream-Keeper-Challenge/pull/15
+
 **Demo Video:** https://youtu.be/OJs40JOCPPU
+
 
 ---
 
