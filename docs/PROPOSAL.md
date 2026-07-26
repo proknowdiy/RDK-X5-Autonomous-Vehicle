@@ -10,7 +10,7 @@
 
 # 1. Project Overview
 
-The **RDK X5 Autonomous Vehicle** is a 1/10 scale autonomous vehicle built around the **D-Robotics RDK X5**. The goal is to demonstrate a complete edge-AI autonomous driving pipeline using **ROS 2**, the **D-Robotics Racing Track Detection (ResNet18)** model, and **YOLOv11** for object detection.
+The **RDK X5 Autonomous Vehicle** is a 1/10 scale autonomous vehicle built around the **D-Robotics RDK X5**. The goal is to demonstrate a complete edge-AI autonomous driving pipeline using **ROS 2**, the ** OpenCV-based lane detection pipeline ** model, and **YOLOv11** for object detection.
 
 Unlike a traditional line-following robot, the vehicle drives on a realistic two-lane miniature road, detects obstacles, performs lane changes, and supports instant manual override through a RadioLink RC system.
 
@@ -25,7 +25,7 @@ Unlike a traditional line-following robot, the vehicle drives on a realistic two
 | Environment | Indoor |
 | Road Width | 50 cm |
 | Vehicle Scale | 1/10 |
-| Lighting | 300–800 Lux |
+| Lighting | Day Light |
 | Camera | D-Robotics Stereo Vision MIPI Camera |
 | Main Computer | D-Robotics RDK X5 |
 | Vehicle MCU | DFRobot Beetle ESP32-C3 |
@@ -42,12 +42,12 @@ Unlike a traditional line-following robot, the vehicle drives on a realistic two
 
 ### Perception Layer
 
-Two AI models execute concurrently on the RDK X5 BPU.
+The perception system combines classical computer vision with AI-based object detection to achieve reliable real-time autonomous driving.
 
-| AI Model | Purpose |
+| Technology | Purpose |
 |----------|---------|
-| **D-Robotics Racing Track Detection (ResNet18)** | Estimate road centerline and steering reference |
-| **YOLOv11 (Planned)** | Detect vehicles and static obstacles |
+| **OpenCV (Perspective Transform, Thresholding, Lane Centre Estimation)** | Estimate road centerline and steering reference |
+| **YOLOv11 ** | Detect vehicles and static obstacles |
 
 ### Behavior Planning
 
@@ -65,8 +65,8 @@ Two AI models execute concurrently on the RDK X5 BPU.
 
 ## Innovation
 
-- Uses the official **D-Robotics Racing Track Detection (ResNet18)** model instead of OpenCV line following.
-- Two AI models execute simultaneously on the RDK X5.
+- OpenCV-based lane detection optimized for a custom miniature roa
+- AI-powered object detection using YOLOv11.
 - ROS 2 modular architecture.
 - Dedicated ESP32 vehicle controller.
 - Expandable autonomous driving platform.
@@ -76,13 +76,12 @@ Two AI models execute concurrently on the RDK X5 BPU.
 | ID | Goal |
 |----|------|
 | G1 | Camera ≥30 FPS |
-| G2 | ResNet18 ≥20 FPS |
+| G2 | Lane detection ≥30 FPS |
 | G3 | YOLOv11 ≥15 FPS |
 | G4 | Concurrent ResNet18 + YOLO inference |
 | G5 | Complete one autonomous lap |
 | G6 | Detect and avoid a static obstacle |
-| G7 | Autonomous lane change |
-| G8 | Manual RC override available at all times |
+| G7 | Manual RC override available at all times |
 
 ---
 
@@ -94,14 +93,12 @@ Two AI models execute concurrently on the RDK X5 BPU.
 flowchart LR
 Camera["Stereo Vision MIPI Camera"]
 
-Camera --> ResNet["Road Tracking<br/>D-Robotics ResNet18"]
+Camera --> OpenCV["Lane Detection<br/>OpenCV"]
 Camera --> YOLO["YOLOv11<br/>Object Detection"]
 
-ResNet --> Planner["Behavior Planner"]
+OpenCV --> Controller["Vehicle Controller"]
 
-YOLO --> Planner
-
-Planner --> Controller["Vehicle Controller"]
+YOLO --> Controller
 
 Controller --> UART["UART Interface"]
 
@@ -111,7 +108,7 @@ ESP32 --> Servo["MG996R Servo"]
 
 ESP32 --> ESC["90A Brushed ESC"]
 
-ESC --> Motor["RS540 Motor"]
+ESC --> Motor["Gear Motor"]
 ```
 
 ## Hardware Architecture
@@ -134,7 +131,7 @@ UART --> ESP32
 
 ESP32 --> Servo["MG996R Steering Servo"]
 
-ESC --> Motor["RS540 Brushed Motor"]
+ESC --> Motor["Brushed Gear Motor"]
 
 Receiver["RadioLink Receiver"]
 
@@ -152,11 +149,9 @@ flowchart LR
 
 Camera["camera_node"]
 
-Road["road_tracking_node"]
+Road["lane_detection_node"]
 
 Object["object_detection_node"]
-
-Planner["behavior_planner_node"]
 
 Controller["vehicle_controller_node"]
 
@@ -181,10 +176,10 @@ UART --> ESP32
 
 ## Compute Allocation
 
-| Module | AI Model | Execution |
+| Module | Technology | Execution |
 |---------|----------|-----------|
 | Camera Capture | — | CPU |
-| Road Tracking | D-Robotics Racing Track Detection (ResNet18) | BPU |
+| Road Tracking | OpenCV | BPU |
 | Object Detection | YOLOv11 | BPU |
 | Behavior Planner | Rule Based | CPU |
 | Vehicle Controller | ROS2 | CPU |
@@ -196,7 +191,7 @@ UART --> ESP32
 |----------|--------|-------------------|
 | RDK Studio | ✅ | Development |
 | Stereo Vision Camera | ✅ | Main Sensor |
-| ResNet18 Demo | ✅ | Road Tracking |
+| OpenCV Vision Pipeline | ✅ | Road Tracking |
 | YOLO Demo | ✅ | Object Detection |
 | UART Communication | ✅ | Vehicle Interface |
 
@@ -242,7 +237,7 @@ flowchart LR
 
 Camera["Stereo Vision MIPI Camera"]
 
-Camera --> ResNet["D-Robotics Racing Track Detection\n(ResNet18)"]
+Camera --> OpenCV Lane Detection
 
 Camera --> YOLO["YOLOv11"]
 
@@ -267,7 +262,7 @@ Objects --> Planner
 | Stereo Vision MIPI Camera | 1 |
 | DFRobot Beetle ESP32-C3 | 1 |
 | MG996R Servo | 1 |
-| RS540 Brushed Motor | 1 |
+| Brushed Gear Motor | 1 |
 | RadioLink 90A ESC | 1 |
 | RadioLink RC6GS TX/RX | 1 |
 | 3S 1000mAh LiPo | 1 |
@@ -277,17 +272,19 @@ Objects --> Planner
 
 ```text
 RDK-X5-Autonomous-Vehicle/
-├── README.md
-├── PROPOSAL.md
-├── ROADMAP.md
+├── autonomous_car_ws/
+      ├── src/
+      └── config/
+├── ESP32-C3_firmware/
+|     └── autonomous_vehicle_controller/
 ├── docs/
-├── firmware/
-├── software/
-├── models/
-├── launch/
-├── config/
-├── scripts/
-└── images/
+|     ├── STAGE1.md
+|     ├── PROPOSAL.md
+|     ├── ROADMAP.md
+|     └── STAGE3.md
+├── images/
+└── README.md
+
 ```
 
 See ROADMAP.md for implementation milestones.
@@ -297,5 +294,12 @@ See ROADMAP.md for implementation milestones.
 - Robotics Dream Keeper Challenge
 - D-Robotics RDK X5 Documentation
 - RDK Model Zoo
-- D-Robotics Racing Track Detection (ResNet18)
+- OpenCV
 - ROS 2
+
+## Design Decisions
+
+- OpenCV selected for lane detection due to its reliability on the custom miniature track.
+- YOLOv11 used for AI-based obstacle detection.
+- ESP32-C3 handles low-level vehicle control while the RDK X5 performs high-level perception and decision making.
+- ROS 2 provides modular communication between software components.
