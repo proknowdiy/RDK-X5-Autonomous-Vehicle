@@ -235,13 +235,13 @@ Camera --> OpenCV["Lane Detection"]
 
 Camera --> YOLO["YOLOv11"]
 
-ResNet --> Road["Road Center"]
+OpenCV --> Road["Road Center"]
 
 YOLO --> Objects["Detected Objects"]
 
-Road --> Planner["Behavior Planner"]
+Road --> Vehicle Control["Behavior Planner"]
 
-Objects --> Planner
+Objects --> Vehicle Control
 ```
 
 ---
