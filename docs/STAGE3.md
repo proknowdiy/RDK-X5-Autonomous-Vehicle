@@ -4,6 +4,7 @@
 
 **Author:** Vishal Sharma (Pro Know)  
 **Repository:** https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle
+**Demo Video:** https://youtu.be/OJs40JOCPPU
 
 ---
 
