@@ -231,7 +231,7 @@ flowchart LR
 
 Camera["Stereo Vision MIPI Camera"]
 
-Camera --> OpenCV Lane Detection
+Camera --> OpenCV["Lane Detection"]
 
 Camera --> YOLO["YOLOv11"]
 
