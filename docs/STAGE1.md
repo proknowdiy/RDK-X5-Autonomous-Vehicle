@@ -222,9 +222,9 @@ https://youtu.be/LycdAzMbdvA
 
 ## Project Documentation
 
-- 📄 [Stage 2 Proposal](PROPOSAL.md)
+- 📄 [Stage 2 Proposal](https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/docs/PROPOSAL.md)
 
-- 🗺️ [Development Roadmap](ROADMAP.md)
+- 🗺️ [Development Roadmap](https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/docs/ROADMAP.md)
 
 RDK X5 Autonomous Vehicle
 
