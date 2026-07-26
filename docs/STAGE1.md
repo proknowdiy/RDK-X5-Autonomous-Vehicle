@@ -189,7 +189,7 @@ The following AI applications were successfully tested:
 ## Screenshot A
 
 RDK Studio flashing process and SSH connection.
-![RDKOS_Ubuntu-22.04 Screenshot](images/RDKOS_Ubuntu_22.04.jpeg)
+![RDKOS_Ubuntu-22.04 Screenshot](images/RDKOS_Ubuntu_22.04.jpeg)  
 ![RDK-Studio_Terminal_SSH_Working_Screenshot](images/RDK-Studio_Terminal_SSH_Working.png)
 
 ## Screenshot B
@@ -200,7 +200,7 @@ Stereo Vision MIPI Camera operational.
 ## Screenshot C
 
 YOLO object detection running on the RDK X5.
-![YOLOv5_Over_MIPI_Camera Screenshot](images/YOLOv5_MIPI_Camera.png) 
+![YOLOv5_Over_MIPI_Camera Screenshot](https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/YOLOv5_MIPI_Camera.png) 
 
 ---
 
