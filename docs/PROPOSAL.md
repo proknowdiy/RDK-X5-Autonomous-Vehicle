@@ -155,23 +155,18 @@ Object["object_detection_node"]
 
 Controller["vehicle_controller_node"]
 
-UART["uart_bridge_node"]
-
 ESP32["esp32_controller"]
 
 Camera -->|/camera/image_raw| Road
 
 Camera -->|/camera/image_raw| Object
 
-Road -->|/road_state| Planner
+Road -->|/road_state| Controller
 
-Object -->|/detections| Planner
+Object -->|/detections| Controller
 
-Planner -->|/vehicle_cmd| Controller
+Controller -->|/vehicle_command_over_uart_tx_rx| ESP32
 
-Controller -->|/uart_tx| UART
-
-UART --> ESP32
 ```
 
 ## Compute Allocation
@@ -179,9 +174,8 @@ UART --> ESP32
 | Module | Technology | Execution |
 |---------|----------|-----------|
 | Camera Capture | — | CPU |
-| Road Tracking | OpenCV | BPU |
+| Road Tracking | OpenCV | CPU |
 | Object Detection | YOLOv11 | BPU |
-| Behavior Planner | Rule Based | CPU |
 | Vehicle Controller | ROS2 | CPU |
 | UART Bridge | Serial Driver | CPU |
 
