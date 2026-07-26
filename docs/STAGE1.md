@@ -189,13 +189,13 @@ The following AI applications were successfully tested:
 ## Screenshot A
 
 RDK Studio flashing process and SSH connection.
-![RDKOS_Ubuntu-22.04 Screenshot](images/RDKOS_Ubuntu_22.04.jpeg)  
-![RDK-Studio_Terminal_SSH_Working_Screenshot](images/RDK-Studio_Terminal_SSH_Working.png)
+![RDKOS_Ubuntu-22.04 Screenshot](https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/RDKOS_Ubuntu_22.04.jpeg)  
+![RDK-Studio_Terminal_SSH_Working_Screenshot](https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/RDK-Studio_Terminal_SSH_Working.png)
 
 ## Screenshot B
 
 Stereo Vision MIPI Camera operational.
-![RDK-X5_MIPI_Camera Screenshot](images/RDK-X5_MIPI_Camera.jpeg)   
+![RDK-X5_MIPI_Camera Screenshot](https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/RDK-X5_MIPI_Camera.jpeg)   
 
 ## Screenshot C
 
