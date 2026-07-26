@@ -12,6 +12,10 @@ An AI-powered **1/10 scale autonomous vehicle** built using the **D-Robotics RDK
 
 This project was developed as part of the **D-Robotics Robotics Dream Keeper Challenge 2026**.
 
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/hero.jpg" width="850">
+</p>
+
 > **Demo Video:** *(Add YouTube Link Here)*
 
 ---
@@ -75,6 +79,10 @@ Stereo Vision Camera
 | Radio System | RadioLink RC6GS |
 
 ---
+
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/Hardware-1.jpg" width="750">
+</p>
 
 # Software
 
@@ -154,6 +162,24 @@ When a stop sign or obstacle is detected within the configured safety region, th
 
 ---
 
+### Lane Detection + Object Detection
+
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/benchmarks/RDK-X5_Performance%20-4.jpg" width="900">
+</p>
+
+# Performance
+
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/benchmarks/RDK-X5_Performance%20-2.jpg" width="900">
+</p>
+
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/benchmarks/RDK-X5_Performance%20-1.jpg" width="900">
+</p>
+
+
+
 # Results
 
 ✔ OpenCV-based lane following
@@ -167,6 +193,16 @@ When a stop sign or obstacle is detected within the configured safety region, th
 ✔ UART communication between RDK X5 and ESP32-C3
 
 ✔ Real-time vehicle control
+
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/benchmarks/RDK-X5_Performance%20-6.jpg" width="900">
+</p>
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/benchmarks/RDK-X5_Performance%20-8.jpg" width="900">
+</p>
+<p align="center">
+  <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/benchmarks/RDK-X5_Performance%20-7.jpg" width="900">
+</p>
 
 ---
 
