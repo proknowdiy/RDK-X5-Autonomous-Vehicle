@@ -1,4 +1,60 @@
 # RDK X5 Autonomous Vehicle
+
+An AI-powered 1/10 scale autonomous vehicle built using the **D-Robotics RDK X5**, demonstrating real-time road tracking, object detection, behavior planning, and autonomous driving using ROS 2.
+
+This project is being developed as part of the **D-Robotics Robotics Dream Keeper Challenge 2026**.
+
+## Features
+
+- AI-powered autonomous driving
+- OpenCV-based Lane Detection
+- YOLOv11 object detection
+- ROS 2 modular architecture
+- UART communication with ESP32-C3
+- Manual / Autonomous driving modes
+- Autonomous lane following
+- Obstacle avoidance
+
+## AI Models
+
+| Technology | Purpose |
+|---------|----------|
+| OpenCV | Lane Detection |
+| YOLOv11 | Vehicle & Obstacle Detection |
+
+## Project Status
+
+| Stage | Status |
+|-------|--------|
+| Stage 1 – Ignite Challenge | ✅ Completed |
+| Stage 2 – Build Challenge | ✅ Completed |
+| Stage 3 – Launch Challenge | ✅ Completed |
+
+---
+
+## Hardware
+
+| Component          | Description                          |
+| ------------------ | ------------------------------------ |
+| Main Controller    | D-Robotics RDK X5                    |
+| Camera             | D-Robotics Stereo Vision MIPI Camera |
+| Storage            | 16GB+ microSD Card                   |
+| Network            | Wi-Fi / Ethernet                     |
+| Vehicle Controller | ESP32                                |
+| Chassis            | RC Vehicle Platform                  |
+
+---
+
+## Software
+
+| Software     | Purpose                 |
+| ------------ | ----------------------- |
+| RDK Studio   | Development Environment |
+| Ubuntu 22.04 | Operating System        |
+| Python 3     | Application Development |
+| OpenCV       | Computer Vision         |
+| YOLO Models  | AI Object Detection     |
+
 ---
 
 # Stage 1 - Ignite Challenge
@@ -226,13 +282,14 @@ https://youtu.be/LycdAzMbdvA
 
 - 🗺️ [Development Roadmap](https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/docs/ROADMAP.md)
 
-RDK X5 Autonomous Vehicle
-
-Robotics Dream Keeper Challenge 2026
 
 # Author
 
 **Vishal Sharma**
 
 YouTube Channel [Pro Know ]: https://www.youtube.com/@proknow
+
+> **Note**
+>
+> This document contains the Stage 1 (Ignite) submission prepared for the Robotics Dream Keeper Challenge. Some implementation details evolved during development. For the final implementation, see the main README and Stage 3 documentation.
 
