@@ -16,7 +16,7 @@ This project was developed as part of the **D-Robotics Robotics Dream Keeper Cha
   <img src="https://github.com/proknowdiy/RDK-X5-Autonomous-Vehicle/blob/main/images/hero.jpg" width="850">
 </p>
 
-> **Demo Video:** *(Add YouTube Link Here)*
+> **Demo Video:** *https://youtu.be/OJs40JOCPPU*
 
 ---
 
